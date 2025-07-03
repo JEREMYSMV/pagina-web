@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mega Force</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="/sedes/sedes.css">
+  <link rel="icon" type="image/png" href="/image/favicon-16x16.png">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+<link href="https://fonts.googleapis.com/css2?family=Fjalla+One&family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto+Flex:opsz,wght@8..144,100..1000&family=Roboto+Slab&family=Roboto:ital,wght@0,200;1,200&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+</head>
+<body>
+  <nav id="navbar" class="transparent">
+    <div class="nav-container">
+      <a href="/PG.Principal/index.html"><img src="/image/logo.png" alt="Logo Mega Force" class="logo"></a>
+      <button id="abrir" class="abrir-menu"><i class="fa-solid fa-bars"></i></button>
+      <div class="nav" id="nav">
+        <button id="cerrar" class="cerrar-menu"><i class="fa-solid fa-xmark"></i></button>
+        <ul class="nav-links">
+          <li><a href="#nosotros">Nosotros</a></li>
+          <li><a href="#planes">Planes</a></li>
+          <li><a href="/sedes/sedes.html">Sedes</a></li>
+          <li><a href="#contacto">Contáctenos</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <header>
+    <div class="header-content">
+      <h1>SEDES</h1>
+    </div>
+  </header>
+
+  <h2 style="text-align:center; margin-top: 50px; font-size: 2rem; color:#1F67BD;"></h2>
+<div id="map" style="height: 500px; width: 90%; margin: 30px auto; border-radius: 15px;"></div>
+
+  <section id="sedes">
+    
+    <div class="sede-container">
+      <div class="sede">
+        <img src="/image/las flores.jpg" alt="Las Flores">
+        <div class="sede-info">
+          <h3>Las Flores</h3>
+          <p><i class="fa-solid fa-location-dot"></i> Av. Las Flores de Primavera 1238, San Juan de Lurigancho</p>
+          <p><i class="fa-solid fa-phone"></i> 960514216</p>
+        </div>
+      </div>
+      <div class="sede">
+        <img src="/image/la hacienda.jpg" alt="La Hacienda">
+        <div class="sede-info">
+          <h3>La Hacienda</h3>
+          <p><i class="fa-solid fa-location-dot"></i> Av. Próceres de la Independencia 1715, San Juan de Lurigancho</p>
+          <p><i class="fa-solid fa-phone"></i> 2866268</p>
+        </div>
+      </div>
+      <div class="sede">
+        <img src="/image/santa rosa.jpg" alt="Santa Rosa">
+        <div class="sede-info">
+          <h3>Santa Rosa</h3>
+          <p><i class="fa-solid fa-location-dot"></i> Av. Fernando Wiesse, Cercado de Lima</p>
+          <p><i class="fa-solid fa-phone"></i> 3128934</p>
+        </div>
+      </div>
+      <div class="sede">
+        <img src="/image/mariscal ceres.jpg" alt="Mariscal Cáceres">
+        <div class="sede-info">
+          <h3>Mariscal Cáceres</h3>
+          <p><i class="fa-solid fa-location-dot"></i> Ca. Mz E 344, San Juan de Lurigancho</p>
+          <p><i class="fa-solid fa-phone"></i> 960969911</p>
+        </div>
+      </div>
+      <div class="sede">
+        <img src="/image/los olivos.jpg" alt="Los Olivos">
+        <div class="sede-info">
+          <h3>Los Olivos</h3>
+          <p><i class="fa-solid fa-location-dot"></i> Av. Naranjal 1542, Los Olivos</p>
+          <p><i class="fa-solid fa-phone"></i> 4963179</p>
+        </div>
+      </div>
+      <div class="sede">
+        <img src="/image/ventanilla metro.jpg" alt="Ventanilla Metro">
+        <div class="sede-info">
+          <h3>Ventanilla Metro</h3>
+          <p><i class="fa-solid fa-location-dot"></i> Av. Ventanilla Mz. C8 Lot. 16, Callao</p>
+          <p><i class="fa-solid fa-phone"></i> 5534870</p>
+        </div>
+      </div>
+      <div class="sede">
+        <img src="/image/ventanilla vea.jpg" alt="Ventanilla VEA">
+        <div class="sede-info">
+          <h3>Ventanilla VEA</h3>
+          <p><i class="fa-solid fa-location-dot"></i> Av. Néstor Gambetta, Callao</p>
+          <p><i class="fa-solid fa-phone"></i> 4554104</p>
+        </div>
+      </div>
+      <div class="sede">
+        <img src="/image/ate.jpg" alt="Ate">
+        <div class="sede-info">
+          <h3>Ate</h3>
+          <p><i class="fa-solid fa-location-dot"></i> Av. Nicolás Ayllón 5596, Lima</p>
+          <p><i class="fa-solid fa-phone"></i> 960545897</p>
+        </div>
+      </div>
+      <div class="sede">
+        <img src="/image/marscal22.jpeg" alt="Mariscal Cáceres 2">
+        <div class="sede-info">
+          <h3>Mariscal Cáceres 2</h3>
+          <p><i class="fa-solid fa-location-dot"></i> Av. Próceres de la Independencia 5384, San Juan de Lurigancho</p>
+          <p><i class="fa-solid fa-phone"></i> 934790061</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="footer-header">
+        <img src="/image/logo.png" alt="Logo Mega Force" class="logo-footer">
+        <div class="footer-social">
+          <a href="#"><img src="/image/instagram.png" alt="Instagram"></a>
+          <a href="#"><img src="/image/facebook.png" alt="Facebook"></a>
+          <a href="#"><img src="/image/youtube.png" alt="YouTube"></a>
+          <a href="#"><img src="/image/tiktok.png" alt="TikTok"></a>
+        </div>
+      </div>
+      <div class="footer-content">
+        <hr class="footer-divider">
+        <div class="footer-links">
+          <div class="footer-col">
+            <h4>ACERCA DE</h4>
+            <a href="#">SEDE</a>
+            <a href="#">NOSOTROS</a>
+          </div>
+          <div class="footer-col">
+            <h4>MEGA FORCE</h4>
+            <a href="#">¿QUIÉNES SOMOS?</a>
+            <a href="#">CONTÁCTENOS</a>
+          </div>
+        </div>
+        <hr class="footer-divider">
+      </div>
+    </div>
+    <p class="footer-bottom">MEGA FORCE © 2023 Todos los derechos reservados.</p>
+  </footer>
+
+  <script src="/index.js"></script>
+
+</body>
+</html>
